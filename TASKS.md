@@ -23,7 +23,21 @@ Acceptance requirements refer to [SPEC.md](SPEC.md); phase gates to
 - [x] Inspect oldhelp and existing GitHub repository without running the game adapter.
 - [x] Compare foundations using current primary documentation.
 - [x] Write requirements, architecture, roadmap, and acceptance backlog.
-- [ ] Validate and publish initial scaffold; record commit and repository configuration.
+- [x] Validate and publish initial scaffold; record commit and repository configuration.
 
 The final setup status is recorded in [validation evidence](docs/VALIDATION.md).
 No application build, test, or real-game compatibility claim is made by these checks.
+
+## Published GitHub backlog
+
+- F01: [#1](https://github.com/ChrisTitusTech/warframe-linux/issues/1)
+- F02: [#2](https://github.com/ChrisTitusTech/warframe-linux/issues/2)
+- F03: [#3](https://github.com/ChrisTitusTech/warframe-linux/issues/3)
+- C01: [#4](https://github.com/ChrisTitusTech/warframe-linux/issues/4)
+- C02: [#5](https://github.com/ChrisTitusTech/warframe-linux/issues/5)
+- I01: [#6](https://github.com/ChrisTitusTech/warframe-linux/issues/6)
+- R01: [#7](https://github.com/ChrisTitusTech/warframe-linux/issues/7)
+- R02: [#8](https://github.com/ChrisTitusTech/warframe-linux/issues/8)
+- E01: [#9](https://github.com/ChrisTitusTech/warframe-linux/issues/9)
+- P01: [#10](https://github.com/ChrisTitusTech/warframe-linux/issues/10)
+- B01: [#11](https://github.com/ChrisTitusTech/warframe-linux/issues/11)

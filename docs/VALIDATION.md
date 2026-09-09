@@ -12,7 +12,20 @@ Date: 2026-09-09. Scope: planning and GitHub bootstrap only.
 
 ## Checks
 
-Publication and local validation results will be recorded after execution.
+- PASS: all local links in new Markdown files resolve; new documentation is ASCII.
+- PASS: staged whitespace check (`git diff --cached --check`).
+- PASS: common private-key/GitHub/AWS credential-pattern scan of staged source scope;
+  no matches. This is a limited pattern check, not a full security audit.
+- PASS: all 79 oldhelp files match the pre-publication SHA-256 manifest.
+- PASS: initial commit `d284f76c4c2ab0b6c06f49b77d36e23739753527` pushed to `main`; GitHub commit API matches local HEAD.
+- PASS: read back public repository, default branch `main`, description/topics,
+  squash-only merging, automatic merged-branch deletion, and private vulnerability
+  reporting enabled.
+- PASS: 7 milestones and 11 planned issues created and read back. Links are in TASKS.md.
+- Existing secret scanning and push protection preserved. No branch protection or
+  application CI was added before real checks exist.
+
+This evidence update is committed separately after the initial publication.
 
 ## Not performed
 
