@@ -1,6 +1,6 @@
-# Proposed architecture
+# Go implementation architecture
 
-One local desktop app, a typed domain/service layer, SQLite, and replaceable
+A Wails v2 desktop shell, React/TypeScript views, a Go service layer, SQLite, and replaceable
 providers. No hosted backend is required. This layout is proposed, not created:
 
 ```text
@@ -23,7 +23,8 @@ Do not expose arbitrary shell commands, arbitrary URL fetches, process memory, o
 raw credentials as frontend bindings. Load bundled UI assets; external links open
 in the user's browser after scheme validation. No runtime third-party UI plugins.
 
-Proposed contracts, independent of Go versus Rust:
+Implement these contracts as small Go interfaces with context.Context for cancellable
+operations. Bind only service-facing DTOs to the frontend:
 
 | Contract | Inputs | Outputs / errors |
 | --- | --- | --- |

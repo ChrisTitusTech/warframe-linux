@@ -33,3 +33,16 @@ No application implementation, toolchain installation, application build/unit te
 manual game access, OCR benchmark, desktop spike, or packaging validation.
 These are future roadmap gates; the supplied reference is not certified working.
 No release or deployment is part of this planning milestone.
+
+## Finalized Go plan handoff
+
+Scope: select Go/Wails v2, split implementation into 31 PR-sized tasks across
+seven phases, define review-size targets, and provide next-machine instructions.
+Application implementation and the unrelated Dependabot PR are outside this change.
+
+Validation for this documentation-only change uses `git diff --check` and a local
+Python check of Markdown links, ASCII text, unique task IDs, complete/acyclic task
+dependencies, and all 11 parent issue mappings. No app tests are applicable because
+no app code changes. Publication requires independent `codex review --uncommitted`;
+its completed result and final GitHub checks are recorded on the planning PR.
+The 79 oldhelp reference files must have no diff against main.

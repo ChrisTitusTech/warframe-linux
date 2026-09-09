@@ -1,23 +1,28 @@
 # Foundation decision
 
-Date: 2026-09-09. Status: proposed; no framework implementation is authorized in
-this planning pass. The owner accepts considering a rewrite.
+Date: 2026-09-09. Status: accepted by the owner. Application implementation starts
+on the next machine; this change finalizes the plan and handoff.
 
-## Recommendation
+## Accepted stack
 
-Start the feasibility work with **Go services, Wails, TypeScript/React, and SQLite**.
-Reuse reviewed domain behavior from oldhelp, replacing its terminal presentation
-and hard-coded paths. This minimizes simultaneous changes while allowing a rich
-inventory table, crafting detail panel, and reward view. React is a proposed
-maintainability choice, not a requirement imposed by Wails.
+**Go backend + Wails v2 desktop shell + React/TypeScript frontend + SQLite.**
+Keep the Go backend independent of Wails bindings. Reuse reviewed behavior from
+oldhelp while replacing its terminal presentation and hard-coded paths. React is
+the selected UI framework; this is not an all-Go UI.
 
-Use Wails v2 as the stable baseline. Evaluate v3 specifically if its multi-window
-and tray APIs make the reward panel substantially simpler. As checked on this
-date, [Wails v3](https://v3.wails.io/) describes itself as beta with a stable desktop
-API. Pin the selected version after the spike; do not use floating latest in CI.
-Do not infer performance from framework marketing: measure the actual application.
+Go is selected for direct reuse, straightforward maintenance, and the expected
+HTTP/SQLite workload. A Rust rewrite is out of scope. Wails v3, Tauri, and Electron
+are historical alternatives below, not competing implementation tracks. Revisit
+the shell only if a documented blocker requires an owner decision; keep Go as the
+backend. A normal companion window is the baseline, with overlays conditional on
+actual desktop support.
 
-## Options
+F01a pins an exact supported Go version, Wails v2 release, Node LTS version, and
+frontend lockfile on the implementation machine. The oldhelp Go version is a
+reference constraint to assess, not an automatic pin for the new app. F01c verifies
+packaging. Do not infer performance from framework marketing: measure the app.
+
+## Historical options (decision closed)
 
 | Foundation | Advantages for this project | Costs and uncertainties | Choose when |
 | --- | --- | --- | --- |
@@ -74,14 +79,13 @@ removing Overwolf are not evidence of approval. Preserve the reference adapter's
 explicit opt-in/revocation behavior if it is carried forward. This is a concrete
 release constraint for that provider, not a reason to block the other features.
 
-## Decision gate
+## Implementation gate
 
-P0 compares a Wails mock-data desktop slice with Tauri if Wails hits a material
-blocker or the owner prefers Rust. Run the same display/capture/package checks.
-Accept Wails if the required Linux matrix works with a normal-window fallback,
-installation is reproducible, and backend operations stay cancellable without
-freezing the UI. If it fails, record the failing environment and choose Tauri or
-Electron from measured evidence. Avoid maintaining two production backends.
+P0 proves the selected Wails v2 shell builds and runs on Linux, measures the mock
+workflow, and records capture and packaging limitations. No Rust comparison spike
+is scheduled. Capture failures produce explicit unsupported capabilities and a
+normal-window/image-import fallback; they do not silently change the language.
+Only demonstrated blockers warrant revisiting the shell with the owner.
 
 A rewrite does not automatically erase inherited licensing obligations. Preserve
 attribution for copied/adapted work, and resolve the intended distribution license

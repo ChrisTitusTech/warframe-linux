@@ -1,23 +1,40 @@
 # Roadmap
 
-Status: planning, 2026-09-09. Phases are dependency ordered; no calendar promises.
-The current authorized milestone is planning documents and initial GitHub setup.
-Stop there before application implementation.
+Status: finalized Go implementation plan, 2026-09-09. This handoff finalizes and
+merges planning only; begin implementation on the next machine with F01a.
+Go + Wails v2 + React/TypeScript + SQLite is selected. Each child row in
+[TASKS.md](TASKS.md) is a separate PR, following [CONTRIBUTING.md](CONTRIBUTING.md).
+Phases group outcomes; they are not giant PRs or blanket approval checkpoints.
 
-| Phase | Outcome and scope | Dependencies | Exit / validation |
-| --- | --- | --- | --- |
-| P0 - Feasibility | Select Wails/Tauri; mock inventory desktop; capture/window/package spike; license and data-field decisions | Planning review; owner resolves license intent | Reproducible build on documented Linux matrix, capture denial/fallback evidence, measured budgets, written framework decision; no unverified overlay claims |
-| P1 - Core foundation | Domain contracts, SQLite migrations, XDG paths, fixture providers, public catalog and pricing | P0 accepted | R1-R3, R6-R8 service portions; offline, failed-sync, 429, unknown-ID, migration/rollback tests; desktop smoke test |
-| P2 - Inventory and sets | Explicit import, quantities/rank, set completion, manual corrections | P1 and validated import schema | R4, R6; duplicate/unknown/malformed imports; no data loss; keyboard table navigation and scale checks |
-| P3 - Relic assistant | Screenshot import, OCR, live capture on proven desktops, reward panel | P1, P0 capture outcome; P2 for ownership hints | R5 and R8; labeled corpus, false-positive checks, real reward screen demonstration and normal-window fallback |
-| P4 - Experimental inventory | Isolated memory/mobile adapter, redaction, consent/revoke, provider diagnostics | P2; explicit implementation/live-test authorization and reuse decision | R9; fixture failures first, then separately authorized live evidence; can remain unavailable without blocking beta |
-| P5 - Planning features | Recipe trees, missing resources, collection/mastery; foundry only with proven fields | P2 plus complete recipe/mastery data coverage | R10; cycles/missing fields; snapshot age visible; hand-calculated crafting examples |
-| P6 - Beta release readiness | Package, docs, dependency notices, upgrade/rollback, performance and accessibility review | P1-P3; P4/P5 optional and labeled | Clean-machine install, all claimed desktop configurations proven, required CI green, manual evidence attached; release publication needs explicit authorization |
+| Phase | Deliverable and PR units | Exit criteria |
+| --- | --- | --- |
+| P0 - Go desktop foundation | F01a-c: scaffold/CI/package; F02a-b: capture evidence; F03a-b: provenance/contracts | Pinned tooling works on implementation host and CI; package evidence, Linux capability matrix, license and field coverage recorded |
+| P1 - Catalog and pricing | C01a-b: contracts/storage; C02a-d: ingestion/search/quotes/details | R1-R3 and foundational R6-R8 tests; cached/offline workflows usable and failed sync preserves data |
+| P2 - Inventory and sets | I01a-d: import/table/sets/privacy controls | R4/R6, quantity/rank/provenance integrity, malformed import rollback and accessible table demonstrated |
+| P3 - Relic assistant | R01a-b: recognition/image workflow; R02a-c: Wayland/X11/lifecycle | R5/R8, labeled corpus and live capture evidence for claimed desktops, usable ordinary-window fallback |
+| P4 - Experimental inventory | E01a-b: fixture boundary then adapter | R9 including separately authorized live evidence; otherwise feature stays unavailable/pending |
+| P5 - Crafting and collection | P01a-d: graph/planner/mastery/conditional timers | R10 with proven data fields, quantities and stale-state handling; unsupported timers deferred |
+| P6 - Core beta readiness | B01a-c: package/upgrade/compatibility evidence | R1-R8 and all claimed environments proven; checks/review green; release publication separately authorized |
+
+## Scheduling and merge boundaries
+
+Critical path: F01a -> F01b plus F03a -> F03b -> C01a -> C01b, followed by the
+catalog/quote tasks, inventory, and relic tasks listed in TASKS.md. P0 capture and
+package evidence can be completed independently while core fixture work proceeds;
+only explicit task dependencies block a PR. Merge dependencies before dependents.
+P4 and P5 are optional branches after P2, not prerequisites to P6. The core beta
+can ship import/OCR functionality with experimental sync and timers unavailable.
+No calendar estimates imply completion before acceptance evidence passes.
+
+Stop a PR at its child-task boundary; split unrelated work into the next branch.
+Do not merge failed validation or claim unsupported desktop modes. Follow the
+user's phase/approval instructions; documents do not independently grant permission
+to publish, merge, run live game tests, or release software.
 
 ## Validation and rollback
 
 Application phases add actual Go tests/vet, frontend typecheck/lint/build, provider
-contract tests, and a packaged smoke test once the relevant code exists. Do not
+contract tests, and a packaged smoke test once the relevant code exists (F01a documents commands; F01b enables CI). Do not
 create placeholder green application CI in the planning phase. Pin tooling and
 record commands/versions. No game access or live account credentials in hosted CI.
 

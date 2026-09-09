@@ -1,6 +1,7 @@
 # Product specification
 
-Status: proposed, 2026-09-09. Implementation starts only after the planning review.
+Status: finalized implementation plan, 2026-09-09. Go is selected by the owner.
+Implementation starts on the next machine with F01a; this handoff contains no app code.
 
 ## Product goal
 
@@ -66,10 +67,14 @@ riven valuation/sniping, cloud accounts, telemetry, a public plugin marketplace,
 and complete AlecaFrame parity. Foundry timers and mastery require demonstrated
 snapshot fields before scheduling implementation; no inferred live timers.
 
-## Decisions still open
+## Selected foundation and bounded follow-ups
 
-Final framework after P0, license for new work and reuse strategy, inventory field
-coverage, exact Linux versions, and packaging format. Proposed initial packaging
+Go + Wails v2 + React/TypeScript + SQLite is final for implementation. P0 validates
+that selection; it is not a language comparison. Follow-ups have explicit owners
+and deadlines: F01a pins toolchain versions; F03a records the maintainer's new-code
+license/reuse decision before copying reference code; F03b verifies provider field
+coverage; F02a/F02b record exact Linux versions; F01c records packaging behavior.
+These do not prevent starting a fresh mock-data scaffold in F01a. Proposed initial packaging
 is a native archive/package with declared system dependencies. Evaluate AppImage
 in P0; defer Flatpak until capture and process-access constraints are understood.
 Architecture is in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).

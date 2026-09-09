@@ -1,6 +1,13 @@
 ## Change
 
-Describe the problem and resulting behavior. Link the task and requirement IDs.
+Describe the problem and resulting behavior. Link one child task ID, its parent
+issue, and requirement IDs. Parent epics are not single-PR scopes.
+
+## Scope
+
+State handwritten change size and any generated/fixture exclusions. Explain an
+inseparable change above 600 handwritten lines. List prerequisite PRs already
+merged and the rollback approach.
 
 ## Validation
 
