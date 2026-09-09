@@ -1,0 +1,22 @@
+# Local configuration and personal data
+.env
+.env.*
+!.env.example
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+inventory.json
+memory_scan_consent.json
+*.dmp
+*.log
+/local-data/
+/captures/
+# Generated application outputs
+node_modules/
+/dist/
+/build/bin/
+/target/
+/coverage/
+.DS_Store
