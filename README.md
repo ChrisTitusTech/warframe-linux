@@ -3,25 +3,27 @@
 Planning an Overwolf-independent, Linux-first Warframe companion for inventory,
 market prices, relic rewards, crafting, and collection progress.
 
-**Status: planning. There is no new desktop application or release yet.**
+**Status: Go implementation plan finalized; development starts on the next machine.**
+There is no new desktop application or release yet.
 The existing [oldhelp](oldhelp/README.md) directory is a preserved Go reference
 implementation, not a supported release of this project.
 
 ## Start here
 
-- [Foundation options and recommendation](docs/FOUNDATION.md)
+- [Accepted foundation and alternatives](docs/FOUNDATION.md)
 - [Product specification](SPEC.md)
 - [Architecture and provider contracts](docs/ARCHITECTURE.md)
 - [Phased roadmap](ROADMAP.md)
 - [Implementation backlog](TASKS.md)
 - [GitHub setup](docs/GITHUB_SETUP.md)
+- [Start on another machine](docs/HANDOFF.md)
 - [Validation evidence](docs/VALIDATION.md)
 - [Contribution guidance](CONTRIBUTING.md)
 - [Source provenance and licensing](NOTICE.md)
 
-The proposed foundation is Go + Wails + TypeScript/React + SQLite. Tauri/Rust is
-an alternative to evaluate in the first prototype; a rewrite is acceptable.
-Framework selection is provisional until Linux desktop and packaging checks pass.
+The selected foundation is Go + Wails v2 + React/TypeScript + SQLite. Work is split
+into PR-sized tasks with dependencies and acceptance checks. Begin with F01a in
+[TASKS.md](TASKS.md); exact toolchain versions are pinned and verified there.
 No Overwolf runtime, SDK, account, or service is part of the proposed design.
 
 The reference inventory reader finds session credentials in game memory and

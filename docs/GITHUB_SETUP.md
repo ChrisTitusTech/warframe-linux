@@ -7,7 +7,7 @@ Inspected 2026-09-09: existing public repository, empty default branch, local un
 enabled. Secret scanning and push protection already enabled; preserve them.
 The owner explicitly authorized initial commit publication and repository setup.
 
-## Initial setup scope
+## Initial setup scope (completed)
 
 Publish planning documents, contribution/issue/PR templates, ignore rules, and the
 unchanged oldhelp reference including its license. Add description/topics, use
@@ -20,6 +20,19 @@ Project requiring broader account scope. Main-branch protection is deferred unti
 actual CI check names exist and the maintainer chooses a solo-contributor review
 policy. Do not invent a required check that prevents all merges. Wiki settings and
 existing repository access/security settings remain as inspected.
+
+## Finalized Go handoff
+
+Go + Wails v2 + React/TypeScript + SQLite is selected. TASKS.md splits work into
+31 PR-sized child tasks; the 11 original issues remain tracking epics with matching
+child checklists. P0 is Go desktop foundation, not a Wails/Rust comparison. Update
+those issues and milestone descriptions when publishing this handoff. Each future
+PR references a child ID; parent issues close only after all children pass.
+
+The handoff is published through a ready-for-review planning PR and squash merged
+to main after local checks and independent Codex review. It leaves application
+implementation for the next machine. An existing unrelated Dependabot PR is
+outside this change. See [HANDOFF.md](HANDOFF.md).
 
 ## CI rollout
 
