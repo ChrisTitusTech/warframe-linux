@@ -12,10 +12,19 @@ This is not plain MIT. The Commons Clause restricts selling as defined by that
 text; it is not an OSI open-source license. See the
 [Commons Clause publisher](https://commonsclause.com/).
 
-No new license for original project work is selected in this planning pass.
-Resolve that choice before accepting application contributions or publishing a
-release. Keep inherited notices on reused/adapted code. A rewrite or process
-boundary must not be assumed to remove obligations from copied work.
+Original project code, documentation, and configuration are licensed under
+[MIT + Commons Clause License Condition v1.0](LICENSE), unless a file states
+otherwise. This does not relicense third-party code, data, or assets. The unchanged
+oldhelp license governs that reference snapshot; preserve its notices on any
+reused/adapted code. The root license retains Sainan and Gjrud attribution alongside
+ChrisTitusTech and contributors. A rewrite or process boundary must not be assumed
+to remove obligations from copied work.
+
+GitHub's automatic license label is not the license itself. Its detector matches
+known license texts and may display this combination as "Other". The root LICENSE
+and the README's full license label provide the actual terms; do not remove the
+Commons Clause or label the project plain MIT to influence detection. See
+[GitHub's license detection documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository#detecting-a-license).
 
 Data and assets have their own attribution and redistribution requirements.
 Audit WFCD, Market, drop data, screenshot fixtures, and any embedded game images

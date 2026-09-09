@@ -1,5 +1,7 @@
 # Warframe Linux
 
+**License: [MIT + Commons Clause v1.0](LICENSE) (source-available).**
+
 Planning an Overwolf-independent, Linux-first Warframe companion for inventory,
 market prices, relic rewards, crafting, and collection progress.
 
@@ -33,5 +35,6 @@ path separate from catalog, pricing, import, and OCR functionality.
 
 This project is unofficial and is not affiliated with Digital Extremes,
 AlecaFrame, Overwolf, or Warframe Market. Warframe is a Digital Extremes trademark.
-Inherited code has MIT + Commons Clause terms; this repository must not be
-represented as plain MIT. See [NOTICE.md](NOTICE.md).
+Project-authored material is licensed under MIT + Commons Clause v1.0.
+Third-party material retains its own terms. This is not plain MIT or an
+OSI-approved open-source license. See [LICENSE](LICENSE) and [NOTICE.md](NOTICE.md).

@@ -2,8 +2,10 @@
 
 The Go implementation plan is finalized. Read [SPEC.md](SPEC.md),
 [ROADMAP.md](ROADMAP.md), [TASKS.md](TASKS.md), and [handoff](docs/HANDOFF.md).
-Use Go + Wails v2 + React/TypeScript + SQLite. Resolve the license in F03a before
-copying reference code or accepting outside application contributions.
+Use Go + Wails v2 + React/TypeScript + SQLite. Original contributions are accepted
+under the project's [MIT + Commons Clause v1.0](LICENSE) terms, unless separately
+agreed. Preserve third-party licenses and attribution. F03a still requires the
+reuse/data attribution inventory before copying reference code.
 
 ## Small PR workflow
 
