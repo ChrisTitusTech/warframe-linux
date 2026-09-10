@@ -38,6 +38,11 @@ the final squash-merged diff.
   a fresh Ubuntu 24.04 GitHub runner with caches disabled.
 - Independent review of the restored branch (`codex review --base main`):
   no actionable defects. The PR supplies final head checks and merge evidence.
+- Hosted review identified concurrency collisions between fork PRs and a missing
+  patch whitespace check. PR numbers now isolate PR concurrency groups; push
+  groups use full refs. Checkout fetches history so `git diff --check` can cover
+  the PR base or push-before range, with the main merge base for a first push
+  or manual dispatch. Worktree whitespace and tracked-file drift are also checked.
 
 The workflow proves build/test automation, not window or package compatibility.
 F01a's confirmed native window acceptance is reused because application code

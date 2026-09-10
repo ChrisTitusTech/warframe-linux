@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: validate-${{ github.head_ref || github.ref_name }}
+  group: validate-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -24,6 +24,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+          fetch-depth: 0
       - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
         with:
           go-version-file: .go-version
@@ -65,6 +66,13 @@ jobs:
       - name: Vet Go
         run: go vet -tags webkit2_41 . ./internal/...
       - name: Check formatting and tracked-file drift
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
         run: |
           test -z "$(gofmt -l main.go app.go internal)"
+          git diff --check
+          if [[ -z "$BASE_SHA" || "$BASE_SHA" =~ ^0+$ ]]; then
+            BASE_SHA=$(git merge-base origin/main HEAD)
+          fi
+          git diff --check "$BASE_SHA" HEAD
           git diff --exit-code
