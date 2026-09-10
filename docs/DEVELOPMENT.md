@@ -68,6 +68,16 @@ Scope Go checks to the app and `internal` so they exclude both `oldhelp` and Go
 source embedded in frontend dependencies. Go assets require a built frontend.
 For interactive development, use `wails dev -tags webkit2_41` after installation.
 
+The [desktop validation workflow](../.github/workflows/validate.yml) runs these
+automated commands on a fresh Ubuntu 24.04 runner for PRs, main and `codex/**`
+pushes. Task-branch pushes allow validation before a ready PR is opened.
+Actions use full commit pins; the token has only contents read permission and
+checkout does not retain credentials. Dependency caches are disabled to exercise
+installation each time. Go uses `.go-version` with automatic toolchain switching
+disabled; Node uses `.node-version`. npm and Wails match the pins above.
+The final check also rejects unformatted Go and tracked-file changes caused by
+the build. CI does not launch the window or replace manual desktop acceptance.
+
 Manual acceptance: confirm the normal desktop window shows the mock-data notice
 and all three examples, then close it with the window manager and confirm process
 exit. Report blank content or rendering errors even if compilation succeeds.
