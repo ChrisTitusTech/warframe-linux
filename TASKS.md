@@ -1,7 +1,8 @@
 # PR-sized task backlog
 
 Status: finalized for Go implementation on the next machine, 2026-09-09.
-F01a acceptance is **complete**; other application tasks are **not started**.
+F01a acceptance is **complete**; F01b is **in progress**. Other application
+tasks are **not started**.
 Each row is one PR-sized outcome;
 GitHub issues #1-#11 are parent tracking epics, not individual PR scopes. Use the
 child ID in the branch and PR title. See [CONTRIBUTING.md](CONTRIBUTING.md) for size
@@ -97,3 +98,5 @@ F01a acceptance completed on 2026-09-10 in
 clean-directory build, lint/typecheck/tests, independent reviews and
 user-confirmed display/normal-close evidence. The PR records the merge commit;
 GitHub issue #1 tracks the child checklist.
+
+F01b validation is tracked in [its evidence record](docs/F01b-VALIDATION.md).
