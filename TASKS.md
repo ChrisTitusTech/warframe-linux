@@ -99,4 +99,7 @@ clean-directory build, lint/typecheck/tests, independent reviews and
 user-confirmed display/normal-close evidence. The PR records the merge commit;
 GitHub issue #1 tracks the child checklist.
 
-F01b validation is tracked in [its evidence record](docs/F01b-VALIDATION.md).
+F01b acceptance completed on 2026-09-10 in
+[PR #16](https://github.com/ChrisTitusTech/warframe-linux/pull/16).
+[Its evidence record](docs/F01b-VALIDATION.md) links the intentional-failure
+and passing fresh-Ubuntu-runner runs; the PR provides final checks and merge commit.
