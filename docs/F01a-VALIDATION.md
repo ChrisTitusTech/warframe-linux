@@ -2,7 +2,8 @@
 
 Base: `fb72200`; branch: `codex/f01a-go-desktop-scaffold`.
 Local implementation, automated checks and manual acceptance passed.
-PR and merge evidence will be recorded with publication.
+Published as [PR #14](https://github.com/ChrisTitusTech/warframe-linux/pull/14).
+The PR provides current remote checks, review state and the eventual merge commit.
 
 ## Environment
 
