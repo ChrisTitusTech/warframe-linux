@@ -71,7 +71,7 @@ jobs:
         run: |
           test -z "$(gofmt -l main.go app.go internal)"
           git diff --check
-          if [[ -z "$BASE_SHA" || "$BASE_SHA" =~ ^0+$ ]]; then
+          if [[ -z "$BASE_SHA" || "$BASE_SHA" =~ ^0+$ ]] || ! git cat-file -e "$BASE_SHA^{commit}" 2>/dev/null; then
             BASE_SHA=$(git merge-base origin/main HEAD)
           fi
           git diff --check "$BASE_SHA" HEAD
