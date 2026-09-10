@@ -5,8 +5,8 @@
 Planning an Overwolf-independent, Linux-first Warframe companion for inventory,
 market prices, relic rewards, crafting, and collection progress.
 
-**Status: Go implementation plan finalized; development starts on the next machine.**
-There is no new desktop application or release yet.
+**Status: F01a mock desktop scaffold in development; no release yet.**
+See the [development guide](docs/DEVELOPMENT.md) for pinned tools and build commands.
 The existing [oldhelp](oldhelp/README.md) directory is a preserved Go reference
 implementation, not a supported release of this project.
 

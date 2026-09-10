@@ -1,7 +1,8 @@
 # PR-sized task backlog
 
 Status: finalized for Go implementation on the next machine, 2026-09-09.
-All application tasks below are **not started**. Each row is one PR-sized outcome;
+F01a acceptance is **complete**; other application tasks are **not started**.
+Each row is one PR-sized outcome;
 GitHub issues #1-#11 are parent tracking epics, not individual PR scopes. Use the
 child ID in the branch and PR title. See [CONTRIBUTING.md](CONTRIBUTING.md) for size
 limits, dependency merges, and validation rules.
@@ -79,8 +80,8 @@ Manual acceptance requires actual evidence; unavailable environments stay pendin
 ## Completion and issue tracking
 
 After each PR, record its URL/merge commit, exact validation, manual environment,
-and date here, then tick the same child ID in its GitHub parent. No rows are
-complete yet. Never use `Closes #<parent>` until every child of that epic passes.
+and date here, then tick the same child ID in its GitHub parent. F01a acceptance
+is complete; merge status is available through its PR below. Never use `Closes #<parent>` until every child of that epic passes.
 P01d can stay deferred without blocking the core beta; its parent remains open or
 is explicitly rescoped by the maintainer. E01b stays pending live verification
 until that evidence exists; it is not required for the import/OCR beta.
@@ -89,3 +90,10 @@ Planning documents, initial repository setup, and finalized Go/PR breakdown are
 the handoff deliverables. Historical setup evidence is in
 [docs/VALIDATION.md](docs/VALIDATION.md); next-machine steps are in
 [docs/HANDOFF.md](docs/HANDOFF.md).
+
+F01a acceptance completed on 2026-09-10 in
+[PR #14](https://github.com/ChrisTitusTech/warframe-linux/pull/14). See
+[its validation record](docs/F01a-VALIDATION.md) for the Fedora 44 X11 environment,
+clean-directory build, lint/typecheck/tests, independent reviews and
+user-confirmed display/normal-close evidence. The PR records the merge commit;
+GitHub issue #1 tracks the child checklist.
