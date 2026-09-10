@@ -1,7 +1,7 @@
 # PR-sized task backlog
 
 Status: finalized for Go implementation on the next machine, 2026-09-09.
-F01a acceptance is **complete**; F01b is **in progress**. Other application
+F01a and F01b acceptance are **complete**. Other application
 tasks are **not started**.
 Each row is one PR-sized outcome;
 GitHub issues #1-#11 are parent tracking epics, not individual PR scopes. Use the

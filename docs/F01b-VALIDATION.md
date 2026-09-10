@@ -33,8 +33,11 @@ the final squash-merged diff.
   `TestIntentionalCIFailureProbe` and its acceptance-probe message. The build,
   typecheck, lint and frontend tests passed; vet/drift steps were correctly
   skipped after the failure. The temporary test has been removed.
-- Restored passing run: pending.
-- PR/current-head remote checks: pending publication.
+- [Restored passing run](https://github.com/ChrisTitusTech/warframe-linux/actions/runs/34543796389)
+  at `5f8d937`: every build/typecheck/lint/test/vet/format/drift step passed on
+  a fresh Ubuntu 24.04 GitHub runner with caches disabled.
+- Independent review of the restored branch (`codex review --base main`):
+  no actionable defects. The PR supplies final head checks and merge evidence.
 
 The workflow proves build/test automation, not window or package compatibility.
 F01a's confirmed native window acceptance is reused because application code
