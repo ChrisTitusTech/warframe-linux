@@ -1,0 +1,19 @@
+:root { font-family: system-ui, sans-serif; color: #e8edf5; background: #111923; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 960px; margin: auto; padding: 48px 32px; }
+header { margin-bottom: 36px; }
+h1 { font-size: 2.5rem; margin: 8px 0; }
+h2 { font-size: 1.25rem; margin: 0; }
+p, footer { color: #b6c3d4; line-height: 1.6; }
+.eyebrow { color: #84d8c2; letter-spacing: .12em; text-transform: uppercase; font-size: .8rem; }
+section { padding: 24px; border: 1px solid #36465a; border-radius: 12px; background: #1b2636; }
+.section-title { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; }
+.badge { border: 1px solid #55756e; color: #a0e3cf; border-radius: 20px; padding: 4px 12px; font-size: .8rem; }
+ul { list-style: none; padding: 0; margin: 24px 0 0; }
+li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding: 20px 0; border-top: 1px solid #36465a; }
+li span { color: #b6c3d4; }
+button { font: inherit; background: #a0e3cf; color: #111923; border: 0; border-radius: 6px; padding: 10px 20px; cursor: pointer; }
+button:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+footer { margin-top: 24px; font-size: .875rem; }
+@media (max-width: 600px) { main { padding: 24px 16px; } section { padding: 16px; } }

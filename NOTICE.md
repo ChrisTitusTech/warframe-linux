@@ -30,3 +30,7 @@ Data and assets have their own attribution and redistribution requirements.
 Audit WFCD, Market, drop data, screenshot fixtures, and any embedded game images
 before shipping. Do not copy AlecaFrame branding, artwork, or layouts verbatim.
 Existing demo images are reference material; do not ship them as application assets.
+
+The F01a desktop scaffold adapts the Wails v2.15.0 React/TypeScript template.
+Its original [MIT notice](docs/licenses/Wails-MIT.txt) remains applicable to those
+portions; see [template provenance](docs/DEVELOPMENT.md#template-provenance).

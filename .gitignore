@@ -20,3 +20,7 @@ node_modules/
 /target/
 /coverage/
 .DS_Store
+/frontend/dist/
+/frontend/wailsjs/
+/frontend/*.tsbuildinfo
+/frontend/package.json.md5

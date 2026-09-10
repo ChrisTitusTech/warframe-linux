@@ -1,7 +1,7 @@
 # PR-sized task backlog
 
 Status: finalized for Go implementation on the next machine, 2026-09-09.
-All application tasks below are **not started**. Each row is one PR-sized outcome;
+F01a is **in progress**; other application tasks are **not started**. Each row is one PR-sized outcome;
 GitHub issues #1-#11 are parent tracking epics, not individual PR scopes. Use the
 child ID in the branch and PR title. See [CONTRIBUTING.md](CONTRIBUTING.md) for size
 limits, dependency merges, and validation rules.
@@ -89,3 +89,8 @@ Planning documents, initial repository setup, and finalized Go/PR breakdown are
 the handoff deliverables. Historical setup evidence is in
 [docs/VALIDATION.md](docs/VALIDATION.md); next-machine steps are in
 [docs/HANDOFF.md](docs/HANDOFF.md).
+
+F01a implementation started on 2026-09-10. See
+[its validation record](docs/F01a-VALIDATION.md); completion remains pending
+PR publication and merge. Local automated checks, independent reviews and
+the user-confirmed display/normal-close check have passed.
