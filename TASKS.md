@@ -106,6 +106,7 @@ and passing fresh-Ubuntu-runner runs; the PR provides final checks and merge com
 
 F01c packaging, measurements, user-confirmed installed-app checks and the
 maintainer-approved acceptance adjustment are recorded in
-[its evidence record](docs/F01c-VALIDATION.md). Its PR records final checks and
-merge status. Search timing remains required in C02b; B01a retains the clean-machine
+[its evidence record](docs/F01c-VALIDATION.md).
+[PR #17](https://github.com/ChrisTitusTech/warframe-linux/pull/17) records final
+checks and merge status. Search timing remains required in C02b; B01a retains the clean-machine
 install and launch check.

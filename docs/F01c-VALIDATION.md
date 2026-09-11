@@ -2,7 +2,8 @@
 
 Prerequisite F01b merged in PR #16 as `b0e542c47a76`.
 Branch: `codex/f01c-linux-package`. Local acceptance is complete under the
-maintainer-approved scope below; merge evidence is recorded in the PR.
+maintainer-approved scope below; merge evidence is recorded in
+[PR #17](https://github.com/ChrisTitusTech/warframe-linux/pull/17).
 
 ## Artifact and build
 
