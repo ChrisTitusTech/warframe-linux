@@ -35,7 +35,9 @@ submit real inventory exports, session credentials, game memory dumps, or
 unredacted account screenshots.
 
 Planning checks: local Markdown links, task dependency consistency, and
-`git diff --check`. F01a pins tooling and documents real commands; F01b makes them
-CI gates. No application test gate exists yet. Oldhelp commands remain in its
-original README and are not new-app validation. Do not run tests tagged `manual`
-without checking their live-game requirements.
+`git diff --check`. Run the automated commands in [the development guide](docs/DEVELOPMENT.md)
+before publication. F01b's `Validate desktop / Build, lint and test` workflow
+enforces build, frontend typecheck/lint/tests, Go race tests/vet and clean tracked
+outputs. Required manual evidence remains separate. Oldhelp commands remain in
+its original README and are not new-app validation. Do not run tests tagged
+`manual` without checking their live-game requirements.

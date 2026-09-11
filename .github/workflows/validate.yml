@@ -1,0 +1,78 @@
+name: Validate desktop
+
+on:
+  push:
+    branches: [main, 'codex/**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Build, lint and test
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GOTOOLCHAIN: local
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: .go-version
+          cache: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .node-version
+          package-manager-cache: false
+      - name: Install native dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends build-essential pkg-config libgtk-3-dev libwebkit2gtk-4.1-dev
+      - name: Install pinned npm and Wails
+        run: |
+          npm install --global npm@11.16.0
+          go install github.com/wailsapp/wails/v2/cmd/wails@v2.15.0
+          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+      - name: Report toolchain
+        run: |
+          go version
+          node --version
+          npm --version
+          wails version
+          pkg-config --modversion gtk+-3.0 webkit2gtk-4.1
+      - name: Install application dependencies
+        run: |
+          go mod download
+          npm ci --prefix frontend
+      - name: Build native desktop and frontend bindings
+        run: wails build -tags webkit2_41
+      - name: Typecheck frontend
+        run: npm run typecheck --prefix frontend
+      - name: Lint frontend
+        run: npm run lint --prefix frontend
+      - name: Test frontend
+        run: npm test --prefix frontend
+      - name: Test Go with race detector
+        run: go test -race -tags webkit2_41 . ./internal/...
+      - name: Vet Go
+        run: go vet -tags webkit2_41 . ./internal/...
+      - name: Check formatting and tracked-file drift
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          test -z "$(gofmt -l main.go app.go internal)"
+          git diff --check
+          if [[ -z "$BASE_SHA" || "$BASE_SHA" =~ ^0+$ ]] || ! git cat-file -e "$BASE_SHA^{commit}" 2>/dev/null; then
+            BASE_SHA=$(git merge-base origin/main HEAD)
+          fi
+          git diff --check "$BASE_SHA" HEAD
+          git diff --exit-code
