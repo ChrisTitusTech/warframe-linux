@@ -65,6 +65,8 @@ jobs:
         run: go test -race -tags webkit2_41 . ./internal/...
       - name: Vet Go
         run: go vet -tags webkit2_41 . ./internal/...
+      - name: Test package assembly helpers
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
       - name: Check formatting and tracked-file drift
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}

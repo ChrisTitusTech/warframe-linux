@@ -57,6 +57,7 @@ npm run lint --prefix frontend
 npm test --prefix frontend
 go test -race -tags webkit2_41 . ./internal/...
 go vet -tags webkit2_41 . ./internal/...
+python3 -m unittest discover -s scripts -p 'test_*.py'
 git diff --check
 ./build/bin/warframe-linux
 ```
@@ -84,6 +85,25 @@ exit. Report blank content or rendering errors even if compilation succeeds.
 No game, account, capture, personal database, or network catalog is used.
 The frontend tests cover backend results, failure/retry and empty states; the Go
 test verifies callers cannot mutate shared fixture data.
+
+## Fedora test archive
+
+On the documented Fedora 44 x86_64 development host, build the F01c preview with:
+
+```sh
+python3 scripts/package_linux.py
+```
+
+The builder recompiles with `-trimpath`, then writes an archive and SHA-256
+sidecar under ignored `build/packages/`. It includes the executable, installation
+instructions, project license, bundled Go/frontend dependency notices and a
+machine-readable build manifest. It does not install or launch the application.
+It rejects other OS/architecture combinations instead of mislabeling binaries.
+Read [the package instructions](../packaging/README.md) for runtime dependencies,
+clean-target installation, uninstall and rollback. F01c combines the
+user-confirmed installed-app desktop check with clean-container dependency
+evidence under the [approved scope](F01c-VALIDATION.md). B01a still requires
+a clean-machine install and launch before distribution.
 
 ## Template provenance
 
