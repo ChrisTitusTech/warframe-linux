@@ -24,3 +24,5 @@ node_modules/
 /frontend/wailsjs/
 /frontend/*.tsbuildinfo
 /frontend/package.json.md5
+/build/packages/
+__pycache__/

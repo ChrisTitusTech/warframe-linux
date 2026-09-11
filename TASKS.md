@@ -1,8 +1,8 @@
 # PR-sized task backlog
 
 Status: finalized for Go implementation on the next machine, 2026-09-09.
-F01a and F01b acceptance are **complete**. Other application
-tasks are **not started**.
+F01a, F01b and F01c acceptance are **complete**. Other application tasks are
+**not started**. F01c merge evidence is recorded in its PR.
 Each row is one PR-sized outcome;
 GitHub issues #1-#11 are parent tracking epics, not individual PR scopes. Use the
 child ID in the branch and PR title. See [CONTRIBUTING.md](CONTRIBUTING.md) for size
@@ -18,7 +18,7 @@ Manual acceptance requires actual evidence; unavailable environments stay pendin
 | --- | --- | --- | --- |
 | F01a ([#1](https://github.com/ChrisTitusTech/warframe-linux/issues/1)) | Pinned Go/Wails mock desktop scaffold | None | R1/R7: pin Go, Wails v2, Node and npm lockfile; fresh install runs real build, lint/typecheck and test commands; mock list opens and closes on target Linux. |
 | F01b ([#1](https://github.com/ChrisTitusTech/warframe-linux/issues/1)) | Build and validation CI | F01a | Run the documented commands on a fresh runner with read-only permissions and pinned actions; prove an intentional failure is reported before final passing run. |
-| F01c ([#1](https://github.com/ChrisTitusTech/warframe-linux/issues/1)) | First Linux package and measurements | F01b | Build a native archive/package with declared dependencies; install on a clean target; record startup/RSS/search timings and uninstall steps. AppImage is an optional comparison. |
+| F01c ([#1](https://github.com/ChrisTitusTech/warframe-linux/issues/1)) | First Linux package and measurements | F01b | Build a native archive/package with declared dependencies; record startup/RSS and uninstall steps. Maintainer accepted current-desktop launch plus clean-container dependency/install/uninstall evidence for F01c; search timing is deferred to C02b. B01a retains clean-machine launch. AppImage is an optional comparison. |
 | F02a ([#2](https://github.com/ChrisTitusTech/warframe-linux/issues/2)) | Wayland capture feasibility evidence | F01a | Document KDE/GNOME versions; user-approved portal capture of a test window, deny/revoke/source-close behavior; record unsupported cases without claiming game compatibility. |
 | F02b ([#2](https://github.com/ChrisTitusTech/warframe-linux/issues/2)) | X11 and companion-window feasibility | F01a | Record X11 capture, focus, scale and ordinary-window behavior; document fullscreen/shortcut/overlay limitations. Actual game checks need separate authorization. |
 | F03a ([#3](https://github.com/ChrisTitusTech/warframe-linux/issues/3)) | License and reuse inventory | None | Maintainer records new-code license and copied-code notices; list reusable modules and source/data attribution; no blanket MIT claim or code migration before this decision. |
@@ -103,3 +103,9 @@ F01b acceptance completed on 2026-09-10 in
 [PR #16](https://github.com/ChrisTitusTech/warframe-linux/pull/16).
 [Its evidence record](docs/F01b-VALIDATION.md) links the intentional-failure
 and passing fresh-Ubuntu-runner runs; the PR provides final checks and merge commit.
+
+F01c packaging, measurements, user-confirmed installed-app checks and the
+maintainer-approved acceptance adjustment are recorded in
+[its evidence record](docs/F01c-VALIDATION.md). Its PR records final checks and
+merge status. Search timing remains required in C02b; B01a retains the clean-machine
+install and launch check.
